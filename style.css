@@ -1,0 +1,74 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.game-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 600px;
+    height: 220px;
+    border-bottom: 10px solid #333;
+    padding-bottom: 10px;
+}
+
+.tower {
+    width: 10px;
+    height: 200px;
+    background-color: #666;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    position: relative;
+}
+
+.disk {
+    height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.2s ease;
+}
+
+.disk-1 { width: 60px; background-color: #ff6347; }
+.disk-2 { width: 80px; background-color: #ffd700; }
+.disk-3 { width: 100px; background-color: #90ee90; }
+.disk-4 { width: 120px; background-color: #add8e6; }
+.disk-5 { width: 140px; background-color: #dda0dd; }
+
+.selected {
+    border: 2px solid #000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#reset-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#message {
+    margin-top: 10px;
+    font-size: 18px;
+    color: green;
+    font-weight: bold;
+}
+
+.instructions {
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.instructions h2 {
+    margin-top: 0;
+}
