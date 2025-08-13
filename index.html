@@ -13,7 +13,10 @@
         <div class="tower" id="tower-2" data-tower="2"></div>
         <div class="tower" id="tower-3" data-tower="3"></div>
     </div>
-    <button id="reset-button">Reset</button>
+            <label for="numDisks">Number of Disks:</label>
+        <input type="number" id="numDisks" value="3" min="1" max="10">
+        <button id="initializeButton">Initialize</button>
+        <button id="resetButton">Reset</button>
     <p>Moves: <span id="move-count">0</span></p>
     <p id="message"></p>
     <div class="instructions">

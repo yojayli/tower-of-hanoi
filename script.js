@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const towers = document.querySelectorAll('.tower');
-    const resetButton = document.getElementById('reset-button');
+    const resetButton = document.getElementById('resetButton');
+    const initializeButton = document.getElementById('initializeButton');
+    const numDisksInput = document.getElementById('numDisks');
     const moveCountSpan = document.getElementById('move-count');
     const messageP = document.getElementById('message');
 
@@ -8,11 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let selectedDisk = null;
     let sourceTower = null;
     let moveCount = 0;
-    const numDisks = 5;
+    let currentNumDisks = 3; // Default value
 
-    function setupGame() {
+    function setupGame(initialDisks) {
+        currentNumDisks = initialDisks;
         towersState = [[], [], []];
-        for (let i = numDisks; i > 0; i--) {
+        for (let i = currentNumDisks; i > 0; i--) {
             towersState[0].push(i);
         }
         moveCount = 0;
@@ -98,14 +101,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function checkWinCondition() {
-        if (towersState[2].length === numDisks) {
+        if (towersState[2].length === currentNumDisks) {
             messageP.textContent = `You won in ${moveCount} moves!`;
         }
     }
 
     towers.forEach(tower => tower.addEventListener('click', handleTowerClick));
     document.addEventListener('keydown', handleKeyPress);
-    resetButton.addEventListener('click', setupGame);
+    resetButton.addEventListener('click', () => setupGame(currentNumDisks));
+    initializeButton.addEventListener('click', () => {
+        const disks = parseInt(numDisksInput.value);
+        if (!isNaN(disks) && disks >= 1 && disks <= 10) {
+            setupGame(disks);
+        } else {
+            alert('Please enter a valid number of disks (1 to 10).');
+        }
+    });
 
-    setupGame();
+    setupGame(parseInt(numDisksInput.value));
 });

@@ -40,6 +40,11 @@ body {
 .disk-3 { width: 100px; background-color: #90ee90; }
 .disk-4 { width: 120px; background-color: #add8e6; }
 .disk-5 { width: 140px; background-color: #dda0dd; }
+.disk-6 { width: 160px; background-color: #ffb6c1; }
+.disk-7 { width: 180px; background-color: #20b2aa; }
+.disk-8 { width: 200px; background-color: #87ceeb; }
+.disk-9 { width: 220px; background-color: #d8bfd8; }
+.disk-10 { width: 240px; background-color: #f08080; }
 
 .selected {
     border: 2px solid #000;
